@@ -20,7 +20,7 @@
     数据库地址填写: mongo,
     数据库端口填写而配置文件MongoDb暴露端口即可: 27017 (默认)
 
-  ![安装配置图](./images/WX20190128-142333.png)
+  ![安装配置图](https://github.com/jun3372/docker-yapi/blob/master/images/WX20190128-142333.png?raw=true)
 
     安装完成
 
