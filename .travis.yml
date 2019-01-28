@@ -1,0 +1,14 @@
+language: bash
+services: docker
+
+before_script:
+    - docker build -t jun3/yapi .
+
+script:
+  - docker-compose up install
+  - docker-compose up update
+  - docker-compose up -d web
+
+after_script:
+  - docker images
+  - docker ps -a
