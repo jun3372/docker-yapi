@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+
+### YApi Web ################################################
+  web:
+    container_name: "Jun_YApi_Web"
+    image: "jun3/yapi"
+    ports:
+      - "${WEB_PORT}:3000"
+    links:
+      - mongo
+    volumes:
+      - "./yapi:/yapi"
+    entrypoint:
+      - node
+      - vendors/server/app.js
+    networks:
+      - backend
+    privileged: true
+    restart: always
+
+
+
+### YApi Install ################################################
+  install:
+    container_name: "Jun_YApi_Install"
+    image: "jun3/yapi"
+    links:
+      - mongo
+    ports:
+      - "${INSTALL_PORT}:9090"
+    volumes:
+      - "./yapi:/yapi"
+    entrypoint:
+      - yapi
+      - server
+    networks:
+      - backend
+
+### YApi Update ################################################
+  update:
+    container_name: "Jun_YApi_Install"
+    image: "jun3/yapi"
+    links:
+      - mongo
+    volumes:
+      - "./yapi:/yapi"
+    entrypoint:
+      - yapi
+      - update -v ${API_VERSION}
+    networks:
+      - backend
+
+
+### MongoDB ############################################
+  mongo:
+    container_name: "Jun_YApi_MongoDB"
+    image: "mongo:${DB_VERSION}"
+    ports:
+      - "${DB_PORT}:27017"
+    volumes:
+      - "./data/db:/data/db"
+    networks:
+      - backend
+    privileged: true
+    restart: always
+
+
+networks:
+    backend:
+        driver: ${NETWORKS_DRIVER}

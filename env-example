@@ -1,0 +1,19 @@
+
+
+# All Networks driver
+NETWORKS_DRIVER=bridge
+
+
+
+# 升级版本号
+API_VERSION=v1.4.4
+
+# 访问端口
+WEB_PORT=3000
+# 安装端口
+INSTALL_PORT=9090
+
+
+
+DB_VERSION=latest
+DB_PORT=27017

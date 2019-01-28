@@ -1,0 +1,19 @@
+.DS_Store
+Thumbs.db
+/phpunit.xml
+/.idea
+/.vscode
+/.atom
+/.env
+
+# 安装文件
+*.lock
+
+# 日志文件
+*.log
+
+# 安装目录
+/yapi
+
+# 数据库
+/data
