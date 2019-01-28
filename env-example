@@ -3,8 +3,6 @@
 # All Networks driver
 NETWORKS_DRIVER=bridge
 
-
-
 # 升级版本号
 API_VERSION=v1.4.4
 
@@ -14,6 +12,7 @@ WEB_PORT=3000
 INSTALL_PORT=9090
 
 
-
+# MongDB版本号
 DB_VERSION=latest
+# 暴露端口
 DB_PORT=27017

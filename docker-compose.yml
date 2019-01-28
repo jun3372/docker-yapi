@@ -40,7 +40,7 @@ services:
 
 ### YApi Update ################################################
   update:
-    container_name: "Jun_YApi_Install"
+    container_name: "Jun_YApi_Update"
     image: "jun3/yapi"
     links:
       - mongo
