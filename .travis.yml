@@ -3,6 +3,7 @@ services: docker
 
 before_script:
     - docker build -t jun3/yapi .
+    - cp ./env-example .env
 
 script:
   - docker-compose up install
